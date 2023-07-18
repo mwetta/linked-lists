@@ -1,7 +1,7 @@
 {
   "name": "other-linked-lists",
   "version": "1.0.0",
-  "description": "",
+  "description": "An implementation of linked lists",
   "main": "index.js",
   "scripts": {
     "test": "jasmine",
@@ -14,5 +14,6 @@
     "jasmine": "^5.0.2",
     "webpack": "^5.88.1",
     "webpack-cli": "^5.1.4"
-  }
+  },
+  "type": "module"
 }
