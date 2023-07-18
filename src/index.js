@@ -41,9 +41,12 @@ const linkedList = () => {
         }
     }
 
-    const at = (index) => {
-        // go from one to next until 
-
+    const at = (index, i = 0) => {
+        let item = head();
+        for (let i = 0; i < index; i++) {
+            item = item.nextNode;
+        }
+        return item;
     }
 
     const pop = () => {
@@ -66,7 +69,7 @@ const linkedList = () => {
 
     const getList = () => list;
 
-    return { append, prepend, size, head, tail, getList, list }
+    return { append, prepend, size, head, tail, getList, at, list }
 }
 
 class Node {
@@ -75,9 +78,6 @@ class Node {
         this.nextNode = nextNode;
     }
 }
-
-const myList = linkedList();
-
 
 export default linkedList;
 export { Node } 
