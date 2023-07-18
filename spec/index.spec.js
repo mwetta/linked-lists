@@ -48,4 +48,15 @@ describe("Linked list", function(){
         expect(myList.at(0).value).toEqual("My fourth value");
     });
 
+    it("should remove the last item using pop", function(){
+        myList.append("My value");
+        myList.append("My second value");
+        myList.prepend("My third value");
+        myList.prepend("My fourth value");
+        myList.append("My fifth value");
+        myList.pop();
+        expect(myList.size()).toEqual(4);
+        expect(myList.tail().value).toEqual("My second value");
+    });
+
 });

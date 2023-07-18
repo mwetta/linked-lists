@@ -50,7 +50,14 @@ const linkedList = () => {
     }
 
     const pop = () => {
-
+        let lastNode = tail();
+        for (const item in list) {
+            if (list[item].nextNode === lastNode) {
+                let newLastNode = new Node(list[item].value);
+                delete list[item];
+                list['tail'] = newLastNode;
+            }
+        }
     }
 
     const contains = () => {
@@ -69,7 +76,7 @@ const linkedList = () => {
 
     const getList = () => list;
 
-    return { append, prepend, size, head, tail, getList, at, list }
+    return { append, prepend, size, head, tail, getList, at, pop, list }
 }
 
 class Node {
