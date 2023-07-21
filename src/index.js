@@ -60,8 +60,14 @@ const linkedList = () => {
         }
     }
 
-    const contains = () => {
-
+    const contains = (value) => {
+        let found = false;
+        for (const item in list) {
+            if (list[item].value === value) {
+                found = true;
+            }
+        }
+        return found
     }
 
     const find = () => {
@@ -76,7 +82,7 @@ const linkedList = () => {
 
     const getList = () => list;
 
-    return { append, prepend, size, head, tail, getList, at, pop, list }
+    return { append, prepend, size, head, tail, getList, at, pop, contains, list }
 }
 
 class Node {

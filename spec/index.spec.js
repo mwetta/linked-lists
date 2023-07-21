@@ -59,4 +59,16 @@ describe("Linked list", function(){
         expect(myList.tail().value).toEqual("My second value");
     });
 
+    it("should return true if the list contains a certain value", function(){
+        myList.append("My value");
+        myList.append("My second value");
+        myList.append("My third value");
+        myList.append("My fourth value");
+        myList.append("Ingrid Bergman");
+        expect(myList.contains("Ingrid Bergman")).toEqual(true);
+        expect(myList.contains("Alfred Hitchcock")).toEqual(false);
+    });
+
+    
+
 });
