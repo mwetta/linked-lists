@@ -70,8 +70,20 @@ const linkedList = () => {
         return found
     }
 
-    const find = () => {
-
+    const find = (value) => {
+        let index = 0;
+        let item = head();
+        while (item.value != value) {
+            console.log(`item: ${item}`);
+            console.log(`item value: ${item.value}`);
+            item = item.nextNode;
+            index++;
+            if (item === null) {
+                index = null;
+                break
+            }
+        } 
+        return index
     }
 
     const toString = () => {
@@ -82,7 +94,7 @@ const linkedList = () => {
 
     const getList = () => list;
 
-    return { append, prepend, size, head, tail, getList, at, pop, contains, list }
+    return { append, prepend, size, head, tail, getList, at, pop, contains, find, list }
 }
 
 class Node {

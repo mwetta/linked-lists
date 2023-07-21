@@ -69,6 +69,17 @@ describe("Linked list", function(){
         expect(myList.contains("Alfred Hitchcock")).toEqual(false);
     });
 
-    
+    it("should return the index of the node containing a value, or null if not found", function(){
+        myList.append("My value");
+        myList.append("My second value");
+        myList.append("My third value");
+        myList.append("My fourth value");
+        myList.append("Ingrid Bergman");
+        myList.prepend("Wes Anderson");
+        expect(myList.find("Ingrid Bergman")).toEqual(5);
+        expect(myList.find("Alfred Hitchcock")).toEqual(null);
+        expect(myList.find("Wes Anderson")).toEqual(0);
+    });
+
 
 });
