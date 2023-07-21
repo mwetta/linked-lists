@@ -74,8 +74,6 @@ const linkedList = () => {
         let index = 0;
         let item = head();
         while (item.value != value) {
-            console.log(`item: ${item}`);
-            console.log(`item value: ${item.value}`);
             item = item.nextNode;
             index++;
             if (item === null) {
@@ -87,14 +85,21 @@ const linkedList = () => {
     }
 
     const toString = () => {
-
+        let item = head();
+        let string = `( ${item.value} ) -> `
+        while (item.nextNode != null) {
+            item = item.nextNode;
+            string += `( ${item.value} ) -> `
+        }
+        string += 'null';
+        return string
     }
 
     const list = {};
 
     const getList = () => list;
 
-    return { append, prepend, size, head, tail, getList, at, pop, contains, find, list }
+    return { append, prepend, size, head, tail, getList, at, pop, contains, find, toString, list }
 }
 
 class Node {

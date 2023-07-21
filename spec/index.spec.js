@@ -81,5 +81,13 @@ describe("Linked list", function(){
         expect(myList.find("Wes Anderson")).toEqual(0);
     });
 
+    it("should return a properly formatted list when toString is called", function(){
+        myList.append("Ingrid Bergman");
+        myList.append("Wes Anderson");
+        myList.append("Greta Gerwig");
+        myList.append("Jane Campion");
+        expect(myList.toString()).toEqual("( Ingrid Bergman ) -> ( Wes Anderson ) -> ( Greta Gerwig ) -> ( Jane Campion ) -> null");
+    });
+
 
 });
