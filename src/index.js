@@ -99,7 +99,7 @@ const linkedList = () => {
 
     const getList = () => list;
 
-    return { append, prepend, size, head, tail, getList, at, pop, contains, find, toString, list }
+    return { append, prepend, size, head, tail, getList, at, pop, contains, find, toString }
 }
 
 class Node {
